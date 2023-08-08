@@ -1,15 +1,149 @@
 ---
+const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body class="bg-orange-100 font-satoshi">
+        <header>
+            <p>Aroreretini</p><nav>
+                <ul class="flex gap-8">
+                    {
+                        menuItems.map((menuItem) => {
+                            return <li>{menuItem}</li>;
+                        })
+                    }
+                </ul>
+            </nav>
+        </header>
+        <div class="bg-[#9146FF]">
+            <p>
+                We’re live right now on Twitch doing a 100 hour stream to raise
+                money for the space →
+            </p>
+        </div>
+        <main>
+            <section class="flex flex-col">
+                <div></div>
+                <div class="flex flex-col gap-4">
+                    <h1>
+                        All brains welcome: a dev study space for neurodivergent
+                        folks
+                    </h1>
+                    <h2>
+                        Community-run & non-profit—by the people, for the people
+                    </h2>
+                    <p>Located on Tory St in Te Aro, Wellington, New Zealand</p>
+                </div>
+            </section>
+            <section>
+                <div class="flex flex-col gap-8">
+                    <h3>What's this all about?</h3>
+                    <p>
+                        Higher education (university/college, bootcamps) is a
+                        great pathway for many folks to end up in fulfilling
+                        careers in tech.
+                        <br />
+                        <br />
+                        For some people, however, it’s not always a clear and immediate
+                        option.
+                        <br />
+                        <br />
+                        We think there’s a missing step for folks who either can’t
+                        afford to study, lack the confidence, or who are neurodivergent.
+                        <br />
+                        <br />
+                        It’s our goal to change that.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <h3>What we’re doing</h3>
+                    <p>
+                        We’re opening a study-space in Te Aro, Wellington, to
+                        create a place for folks to be able to study, be a part
+                        of a community, and ultimately, set out on their own
+                        path towards a career in tech.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <h3>Pricing</h3>
+                    <p>
+                        We want the space to be sustainable but also financially
+                        accessible. Membership is free of any contracts or
+                        obligations.
+                    </p>
+                    <div class="flex gap-8">
+                        <div class="flex flex-col gap-4">
+                            <p class="text-6xl">$10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <h3>The bigger picture</h3>
+                    <p>
+                        We have no idea if this is going to work, or how it will
+                        pan out, but we’re going to put in our all and see what
+                        happens.
+                        <br />
+                        <br />
+                        The immediate goal is to help people here in Wellington get
+                        started on their journey towards a career in tech, but we’re
+                        not going to be satisfied if we achieve that—we want to go
+                        further.
+                        <br />
+                        <br />
+                        By documenting the journey and our learnings, should we be
+                        successful it’s our ambition to share a blueprint for folks
+                        in other communities around the world to create their own
+                        similar community spaces.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-8">
+                    <h3>Fundraising</h3>
+                    <p>
+                        So far, we’ve covered all of the costs out of our own
+                        pocket, and we’ll continue to do so. However, we’d be
+                        very grateful if anyone wishes to make a contribution
+                        towards the space.
+                        <br />
+                        <br />
+                        We’re not a registered charity at this stage, as it’s still
+                        early days, but all money donated will go towards either
+                        the cost of equipment, furnishings or the rent of the space
+                        itself—it’s entirely not-for-profit, too, so if we ended
+                        up with a surplus of cash it’d all go into a pot to pay for
+                        future bills and improvements.
+                        <br />
+                        <br />
+                        We’re not a registered charity at this stage, as it’s still
+                        early days, but all money donated will go towards either
+                        the cost of equipment, furnishings or the rent of the space
+                        itself—it’s entirely not-for-profit, too, so if we ended
+                        up with a surplus of cash it’d all go into a pot to pay for
+                        future bills and improvements.
+                    </p>
+                    <h4>Setup costs</h4>
+                    <ul>
+                        <li class="flex justify-between">
+                            <p class="w-full">Desk materials</p>
+                            <p>$663.67</p>
+                            <p
+                                class="bg-green-300 text-green-700 font-bold text-xs rounded justify-center items-center p-2"
+                            >
+                                PAID
+                            </p>
+                        </li>
+                    </ul>
+                    <h4>Recurring costs</h4>
+                    <ul><li></li></ul>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
