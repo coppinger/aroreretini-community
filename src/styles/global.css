@@ -12,6 +12,10 @@
     src: url("../Satoshi-Variable.ttf");
 }
 
+a {
+    @apply scroll-smooth;
+}
+
 h1,
 h3,
 h4 {
