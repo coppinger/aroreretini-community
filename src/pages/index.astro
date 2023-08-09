@@ -4,6 +4,7 @@ import { Image } from "@astrojs/image/components";
 import cover from "../../public/cover.png";
 import image2 from "../../public/image-2.png";
 import youCanDoAnything from "../../public/you-can-do-anything.png";
+import progress from "../../public/progress-photos.png";
 import Badge from "../components/badge.astro";
 const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
 ---
@@ -242,6 +243,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             a part of a community, and ultimately, set out on
                             their own path towards a career in tech.
                         </p>
+                        <Image src={progress} />
                     </div>
                     <div
                         class="flex flex-col gap-8 items-center max-w-2xl"
