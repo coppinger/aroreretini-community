@@ -5,7 +5,7 @@ import cover from "./public/cover.png";
 import image2 from "./public/image-2.png";
 import youCanDoAnything from "./public/you-can-do-anything.png";
 import Badge from "../components/badge.astro";
-const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
+const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
 ---
 
 <html lang="en">
@@ -17,8 +17,12 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
         <title>Astro</title>
     </head>
     <body class="bg-orange-100 font-satoshi text-xl font-medium text-stone-800">
-        <div class="flex flex-col max-w-screen-xl mx-auto items-center">
-            <header class="flex justify-between w-full py-8">
+        <div
+            class="px-4 md:px-8 flex flex-col max-w-screen-xl mx-auto items-center"
+        >
+            <header
+                class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between w-full py-8"
+            >
                 <svg
                     width="162"
                     height="23"
@@ -31,12 +35,12 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                         fill="#1C1917"></path>
                 </svg>
                 <nav>
-                    <ul class="flex gap-8">
+                    <ul class="flex flex-col md:flex-row gap-8">
                         {
                             menuItems.map((menuItem) => {
                                 return (
                                     <li class="text-lg font-medium">
-                                        {menuItem}
+                                        <a href={`#${menuItem}`}>{menuItem}</a>
                                     </li>
                                 );
                             })
@@ -49,7 +53,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                 target="_blank"
                 class="flex gap-4 bg-[#9146FF] w-fit px-6 py-4 rounded-3xl font-bold text-white mt-4 outline-4 outline-[#EDCFDD] outline bg-twitch-pattern bg-blend-overlay"
             >
-                <div>
+                <div class="hidden lg:block">
                     <svg
                         width="25"
                         height="24"
@@ -102,7 +106,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                             </p>
                         </div>
                     </div>
-                    <div class="flex gap-16 mt-24">
+                    <div class="flex flex-col md:flex-row gap-16 mt-24">
                         <div class="flex flex-col gap-4">
                             <svg
                                 width="80"
@@ -193,7 +197,10 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                     </div>
                 </section>
                 <section class="flex flex-col gap-48 mx-auto items-center">
-                    <div class="flex flex-col gap text-center max-w-xl">
+                    <div
+                        class="flex flex-col gap text-center max-w-xl"
+                        id="About"
+                    >
                         <h5>ABOUT</h5>
                         <p class="text-4xl font-glamour my-8">
                             What's this all about?
@@ -233,7 +240,10 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                             their own path towards a career in tech.
                         </p>
                     </div>
-                    <div class="flex flex-col gap-8 items-center max-w-2xl">
+                    <div
+                        class="flex flex-col gap-8 items-center max-w-2xl"
+                        id="Pricing"
+                    >
                         <h5>PRICING</h5>
                         <p class="text-4xl font-glamour">Membership fee</p>
                         <p class="max-w-xl text-center">
@@ -241,7 +251,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                             financially accessible. Membership is free of any
                             contracts or obligations.
                         </p>
-                        <div class="flex gap-16">
+                        <div class="flex flex-col md:flex-row gap-16">
                             <div class="flex flex-col gap-4 text-center">
                                 <div
                                     class="flex gap-2 items-end justify-center"
@@ -249,7 +259,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                                     <p class="text-6xl font-glamour">$10</p>
                                     <p>week</p>
                                 </div>
-                                <h4>Membership</h4>
+                                <h4>Koha</h4>
                                 <p>
                                     As a member of the space, you’ll have access
                                     to it and the computer equipment whenever
@@ -267,8 +277,12 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                                 <p>
                                     If you can’t afford to pay for membership at
                                     the moment, but want a place to study, we’ll
-                                    do our best to accommodate you—just reach
-                                    out.
+                                    do our best to accommodate you—
+                                    <a
+                                        href="#contact"
+                                        class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150"
+                                        >just reach out.</a
+                                    >
                                 </p>
                             </div>
                         </div>
@@ -303,7 +317,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                             their own similar community spaces.
                         </p>
                     </div>
-                    <div class="flex flex-col gap-8">
+                    <div class="flex flex-col gap-8" id="Fundraiser">
                         <h5 class="text-center">DONATIONS</h5>
                         <p class="text-4xl font-glamour text-center">
                             Fundraising
@@ -356,10 +370,25 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
                             </li>
                         </ul>
                     </div>
+                    <div class="flex flex-col gap-8" id="Contact">
+                        <h5 class="text-center">CONTACT</h5>
+                        <p class="text-4xl font-glamour text-center">
+                            Get in touch
+                        </p>
+                        <p class="max-w-xl text-center">
+                            Have an idea, request, question or anything else?
+                            <br />
+                            Fire us a line: <a
+                                class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150"
+                                href="mailto:hello@aroreretini.community"
+                                >hello@aroreretini.community</a
+                            >
+                        </p>
+                    </div>
                     <Image
                         src={youCanDoAnything}
                         width={560}
-                        class="self-center"
+                        class="self-center md:max-w-xl w-64"
                     />
                 </section>
                 <footer class="flex flex-col gap-16 items-center">
