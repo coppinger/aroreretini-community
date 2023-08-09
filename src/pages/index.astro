@@ -16,12 +16,14 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
         <meta name="generator" content={Astro.generator} />
         <title>Aroreretini Study Space</title>
     </head>
-    <body class="bg-orange-100 font-satoshi text-xl font-medium text-stone-800">
+    <body
+        class="bg-orange-100 font-satoshi text-xl font-medium text-stone-800 scroll-smooth"
+    >
         <div
             class="px-4 md:px-8 flex flex-col max-w-screen-xl mx-auto items-center"
         >
             <header
-                class="flex flex-col md:flex-row gap-8 md:gap-0 justify-between w-full py-8"
+                class="flex flex-col md:flex-row gap-8 md:gap-0 items-center justify-center md:justify-between w-full py-8"
             >
                 <svg
                     width="162"
@@ -39,7 +41,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                         {
                             menuItems.map((menuItem) => {
                                 return (
-                                    <li class="text-lg font-medium">
+                                    <li class="text-lg font-medium text-center md:text-left">
                                         <a href={`#${menuItem}`}>{menuItem}</a>
                                     </li>
                                 );
@@ -51,7 +53,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
             <a
                 href="https://twitch.tv/thecoppinger"
                 target="_blank"
-                class="flex gap-4 bg-[#9146FF] w-fit px-6 py-4 rounded-3xl font-bold text-white mt-4 outline-4 outline-[#EDCFDD] outline bg-twitch-pattern bg-blend-overlay"
+                class="flex gap-4 bg-[#9146FF] w-fit px-6 py-4 rounded-3xl font-bold text-white mb-8 md:mb-0 mt-4 outline-4 outline-[#EDCFDD] outline bg-twitch-pattern bg-blend-overlay text-center md:text-left"
             >
                 <div class="hidden lg:block">
                     <svg
@@ -77,7 +79,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                         <Image src={cover} />
                     </div>
                     <div
-                        class="flex flex-col gap-4 text-center max-w-3xl mx-auto -mt-32"
+                        class="flex flex-col gap-4 text-center max-w-3xl mx-auto -mt-8 md:-mt-32"
                     >
                         <h1>
                             A web-dev focussed study space for neurodivergent
@@ -87,7 +89,9 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             Community-run & non-profit—by the people, for the
                             people
                         </h2>
-                        <div class="flex gap-2 justify-center items-center">
+                        <div
+                            class="flex flex-col md:flex-row gap-2 justify-center items-center"
+                        >
                             <svg
                                 width="16"
                                 height="16"
@@ -99,11 +103,10 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                                     d="M8.5 0.863525C5.39344 0.863525 2.875 3.38196 2.875 6.48853C2.875 7.89509 3.39272 9.17964 4.24585 10.1659L5.75403 11.801H1.78857L0.154053 17.1135H16.8459L15.2114 11.801H12.875L11.9375 13.051H14.2886L15.1541 15.8635H1.84595L2.71143 13.051H6.90698L8.5 14.7777L12.7542 10.1659C13.6073 9.17964 14.125 7.89509 14.125 6.48853C14.125 3.38196 11.6066 0.863525 8.5 0.863525ZM8.5 4.61353C9.53562 4.61353 10.375 5.4529 10.375 6.48853C10.375 7.52415 9.53562 8.36353 8.5 8.36353C7.46438 8.36353 6.625 7.52415 6.625 6.48853C6.625 5.4529 7.46438 4.61353 8.5 4.61353Z"
                                     fill="#1C1917"></path>
                             </svg>
-
-                            <p>
+                            <h5>
                                 Located on Tory St in Te Aro, Wellington, New
                                 Zealand
-                            </p>
+                            </h5>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row gap-16 mt-24">
@@ -279,7 +282,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                                     the moment, but want a place to study, we’ll
                                     do our best to accommodate you—
                                     <a
-                                        href="#contact"
+                                        href="#Contact"
                                         class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150"
                                         >just reach out.</a
                                     >
