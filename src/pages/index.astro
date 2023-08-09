@@ -1,4 +1,10 @@
 ---
+import "../styles/global.css";
+import { Image } from "@astrojs/image/components";
+import cover from "./public/cover.png";
+import image2 from "./public/image-2.png";
+import youCanDoAnything from "./public/you-can-do-anything.png";
+import Badge from "../components/badge.astro";
 const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
 ---
 
@@ -10,140 +16,367 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Join"];
         <meta name="generator" content={Astro.generator} />
         <title>Astro</title>
     </head>
-    <body class="bg-orange-100 font-satoshi">
-        <header>
-            <p>Aroreretini</p><nav>
-                <ul class="flex gap-8">
-                    {
-                        menuItems.map((menuItem) => {
-                            return <li>{menuItem}</li>;
-                        })
-                    }
-                </ul>
-            </nav>
-        </header>
-        <div class="bg-[#9146FF]">
-            <p>
-                We’re live right now on Twitch doing a 100 hour stream to raise
-                money for the space →
-            </p>
-        </div>
-        <main>
-            <section class="flex flex-col">
-                <div></div>
-                <div class="flex flex-col gap-4">
-                    <h1>
-                        All brains welcome: a dev study space for neurodivergent
-                        folks
-                    </h1>
-                    <h2>
-                        Community-run & non-profit—by the people, for the people
-                    </h2>
-                    <p>Located on Tory St in Te Aro, Wellington, New Zealand</p>
+    <body class="bg-orange-100 font-satoshi text-xl font-medium text-stone-800">
+        <div class="flex flex-col max-w-screen-xl mx-auto items-center">
+            <header class="flex justify-between w-full py-8">
+                <svg
+                    width="162"
+                    height="23"
+                    viewBox="0 0 162 23"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M0.484375 22V21.0625L0.828125 21.0312C2.04688 20.875 3.54688 19 4.67188 16.2188L10.7031 1.5H11.9531L19.3594 16.2188C19.9219 17.2812 21.6094 21.2812 24.0469 21.0625L24.0781 22H13.9219V21.0625L14.2656 21.0312C14.7656 20.9688 15.0156 20.5625 15.0156 19.875C15.0156 19.0312 14.6406 17.8125 13.9219 16.2812L13.5469 15.5H6.51562L6.23438 16.25C5.82812 17.4062 5.64062 18.375 5.64062 19.1562C5.64062 20.25 6.04688 20.9688 6.82812 21.0312L7.23438 21.0625V21.25C7.26562 21.3438 7.26562 21.4688 7.26562 21.6562V22H0.484375ZM7.01562 14.25H12.9531L9.64062 7.5L7.01562 14.25ZM24.4844 10.0625L30.3594 7.75H31.2656V12.3125C31.8906 10.875 33.1719 8.21875 35.1406 7.875C36.9844 7.5625 37.8281 8.5625 38.1094 10.2188C38.3281 11.5312 37.2031 12.5938 36.4844 12.3438C35.6719 12.0625 34.9219 11.4375 34.0156 11.4375C33.2344 11.4375 32.3594 11.9062 31.2656 13.4688V16.2188C31.2656 19 31.9844 20.875 33.1406 21.0312L33.4844 21.0625C33.4844 21.0625 33.5156 21.2812 33.5156 21.6562V22H24.4844V21.6562C24.4844 21.2812 24.5156 21.0625 24.5156 21.0625L24.7969 21.0312C26.0469 20.875 26.6719 18.8438 26.6719 16C26.6719 12.125 26.4219 11.3125 24.7969 10.5312L24.5156 10.375C24.5156 10.375 24.4844 10.25 24.4844 10.0625ZM46.4531 22.1562C41.4219 22.1562 38.2344 19.3125 38.2344 14.875C38.2344 10.4375 41.4219 7.59375 46.4531 7.59375C51.4219 7.59375 54.6094 10.4375 54.6094 14.875C54.6094 19.3125 51.4219 22.1562 46.4531 22.1562ZM46.4531 8.625C44.4844 8.625 43.2344 11.0625 43.2344 14.875C43.2344 18.6875 44.4844 21.125 46.4531 21.125C48.3906 21.125 49.6406 18.6875 49.6406 14.875C49.6406 11.0625 48.3906 8.625 46.4531 8.625ZM54.7969 10.0625L60.6719 7.75H61.5781V12.3125C62.2031 10.875 63.4844 8.21875 65.4531 7.875C67.2969 7.5625 68.1406 8.5625 68.4219 10.2188C68.6406 11.5312 67.5156 12.5938 66.7969 12.3438C65.9844 12.0625 65.2344 11.4375 64.3281 11.4375C63.5469 11.4375 62.6719 11.9062 61.5781 13.4688V16.2188C61.5781 19 62.2969 20.875 63.4531 21.0312L63.7969 21.0625C63.7969 21.0625 63.8281 21.2812 63.8281 21.6562V22H54.7969V21.6562C54.7969 21.2812 54.8281 21.0625 54.8281 21.0625L55.1094 21.0312C56.3594 20.875 56.9844 18.8438 56.9844 16C56.9844 12.125 56.7344 11.3125 55.1094 10.5312L54.8281 10.375C54.8281 10.375 54.7969 10.25 54.7969 10.0625ZM68.7969 15.5938C68.7969 10.7188 71.9219 7.59375 76.8281 7.59375C80.9219 7.59375 83.5156 10.4688 83.5156 14.9062L73.7656 15.0625C74.2031 17.8438 75.7656 20 79.7031 19.75C80.5781 19.6875 81.8281 18.9688 82.8906 17.4375L83.3906 17.875C81.7656 20.9688 78.4531 22.1562 76.1719 22.1562C71.6719 22.1562 68.7969 19.5938 68.7969 15.5938ZM76.5781 8.875C74.7656 8.875 73.6094 10.9688 73.6719 14.0625H77.4531C80.7031 13.9375 79.8281 8.875 76.5781 8.875ZM84.2344 10.0625L90.1094 7.75H91.0156V12.3125C91.6406 10.875 92.9219 8.21875 94.8906 7.875C96.7344 7.5625 97.5781 8.5625 97.8594 10.2188C98.0781 11.5312 96.9531 12.5938 96.2344 12.3438C95.4219 12.0625 94.6719 11.4375 93.7656 11.4375C92.9844 11.4375 92.1094 11.9062 91.0156 13.4688V16.2188C91.0156 19 91.7344 20.875 92.8906 21.0312L93.2344 21.0625C93.2344 21.0625 93.2656 21.2812 93.2656 21.6562V22H84.2344V21.6562C84.2344 21.2812 84.2656 21.0625 84.2656 21.0625L84.5469 21.0312C85.7969 20.875 86.4219 18.8438 86.4219 16C86.4219 12.125 86.1719 11.3125 84.5469 10.5312L84.2656 10.375C84.2656 10.375 84.2344 10.25 84.2344 10.0625ZM98.2344 15.5938C98.2344 10.7188 101.359 7.59375 106.266 7.59375C110.359 7.59375 112.953 10.4688 112.953 14.9062L103.203 15.0625C103.641 17.8438 105.203 20 109.141 19.75C110.016 19.6875 111.266 18.9688 112.328 17.4375L112.828 17.875C111.203 20.9688 107.891 22.1562 105.609 22.1562C101.109 22.1562 98.2344 19.5938 98.2344 15.5938ZM106.016 8.875C104.203 8.875 103.047 10.9688 103.109 14.0625H106.891C110.141 13.9375 109.266 8.875 106.016 8.875ZM115.078 9.53125H113.203V9.03125C114.766 8.71875 117.078 6.625 119.016 3.6875H119.766V7.75H124.078V9.53125H119.766C119.766 9.53125 119.734 15.6875 119.734 18.4062C119.734 19.7812 120.078 20.125 121.359 20.125C121.953 20.125 123.141 19.7812 124.141 18.375L124.484 18.7812C122.797 21.6875 120.203 22.1562 119.109 22.1562C115.984 22.1562 115.078 21.2188 115.078 17.625V9.53125ZM124.422 21.6562C124.422 21.2812 124.453 21.0625 124.453 21.0625L124.766 21.0312C125.984 20.875 126.672 18.8438 126.672 16.0312C126.672 12.125 126.391 11.3125 124.766 10.5312L124.453 10.375C124.453 10.375 124.422 10.2188 124.422 10.0625L130.359 7.75H131.266V16.2188C131.266 19 132.016 20.875 133.141 21.0312L133.453 21.0625C133.453 21.0625 133.516 21.2812 133.516 21.6562V22H124.422V21.6562ZM126.203 3.0625C126.203 1.53125 127.172 0.5625 128.734 0.5625C130.266 0.5625 131.234 1.53125 131.234 3.0625C131.234 4.59375 130.266 5.5625 128.734 5.5625C127.172 5.5625 126.203 4.59375 126.203 3.0625ZM133.922 21.6562C133.922 21.2812 133.953 21.0625 133.953 21.0625L134.266 21.0312C135.516 20.875 136.172 18.8438 136.172 16C136.172 12.125 135.891 11.3125 134.266 10.5312L133.953 10.375C133.953 10.375 133.922 10.25 133.922 10.0625L139.828 7.75H140.734V9.90625C141.578 8.78125 143.609 7.59375 146.266 7.59375C148.797 7.59375 149.766 9.46875 149.766 12.4062V16.2188C149.766 19 150.484 20.875 151.641 21.0312L151.953 21.0625C151.953 21.0625 151.984 21.2812 151.984 21.6562V22H143.203V21.0625L143.391 21.0312C144.547 20.8438 145.172 19 145.172 16.2188V12.875C145.172 11.3438 144.359 9.53125 143.047 9.53125C142.391 9.53125 141.609 10 140.734 11.1562V16.2188C140.734 19 141.422 20.9062 142.609 21.0312L142.891 21.0625V22H133.922V21.6562ZM152.391 21.6562C152.391 21.2812 152.422 21.0625 152.422 21.0625L152.734 21.0312C153.953 20.875 154.641 18.8438 154.641 16.0312C154.641 12.125 154.359 11.3125 152.734 10.5312L152.422 10.375C152.422 10.375 152.391 10.2188 152.391 10.0625L158.328 7.75H159.234V16.2188C159.234 19 159.984 20.875 161.109 21.0312L161.422 21.0625C161.422 21.0625 161.484 21.2812 161.484 21.6562V22H152.391V21.6562ZM154.172 3.0625C154.172 1.53125 155.141 0.5625 156.703 0.5625C158.234 0.5625 159.203 1.53125 159.203 3.0625C159.203 4.59375 158.234 5.5625 156.703 5.5625C155.141 5.5625 154.172 4.59375 154.172 3.0625Z"
+                        fill="#1C1917"></path>
+                </svg>
+                <nav>
+                    <ul class="flex gap-8">
+                        {
+                            menuItems.map((menuItem) => {
+                                return (
+                                    <li class="text-lg font-medium">
+                                        {menuItem}
+                                    </li>
+                                );
+                            })
+                        }
+                    </ul>
+                </nav>
+            </header>
+            <a
+                href="https://twitch.tv/thecoppinger"
+                target="_blank"
+                class="flex gap-4 bg-[#9146FF] w-fit px-6 py-4 rounded-3xl font-bold text-white mt-4 outline-4 outline-[#EDCFDD] outline bg-twitch-pattern bg-blend-overlay"
+            >
+                <div>
+                    <svg
+                        width="25"
+                        height="24"
+                        viewBox="0 0 25 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M3.04999 0.480011L1.45999 4.71001V20.64H6.73999V23.52H10.295L13.175 20.64H17.495L23.54 14.61V0.480011H3.04999ZM5.77999 2.88001H21.14V13.44L18.26 16.32H12.5L9.61999 19.2V16.32H5.77999V2.88001ZM10.1 6.24001V12.96H12.98V6.24001H10.1ZM14.9 6.24001V12.96H17.78V6.24001H14.9Z"
+                            fill="#FFEDD5"></path>
+                    </svg>
                 </div>
-            </section>
-            <section>
-                <div class="flex flex-col gap-8">
-                    <h3>What's this all about?</h3>
-                    <p>
-                        Higher education (university/college, bootcamps) is a
-                        great pathway for many folks to end up in fulfilling
-                        careers in tech.
-                        <br />
-                        <br />
-                        For some people, however, it’s not always a clear and immediate
-                        option.
-                        <br />
-                        <br />
-                        We think there’s a missing step for folks who either can’t
-                        afford to study, lack the confidence, or who are neurodivergent.
-                        <br />
-                        <br />
-                        It’s our goal to change that.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <h3>What we’re doing</h3>
-                    <p>
-                        We’re opening a study-space in Te Aro, Wellington, to
-                        create a place for folks to be able to study, be a part
-                        of a community, and ultimately, set out on their own
-                        path towards a career in tech.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <h3>Pricing</h3>
-                    <p>
-                        We want the space to be sustainable but also financially
-                        accessible. Membership is free of any contracts or
-                        obligations.
-                    </p>
-                    <div class="flex gap-8">
-                        <div class="flex flex-col gap-4">
-                            <p class="text-6xl">$10</p>
+                <p class="text-orange-100">
+                    We’re live right now on Twitch doing a 100 hour stream to
+                    raise money for the space →
+                </p>
+            </a>
+            <main class="flex flex-col gap-32 mb-32">
+                <section class="flex flex-col">
+                    <div class="mx-auto -mt-16 pointer-events-none">
+                        <Image src={cover} />
+                    </div>
+                    <div
+                        class="flex flex-col gap-4 text-center max-w-3xl mx-auto -mt-32"
+                    >
+                        <h1>
+                            A web-dev focussed study space for neurodivergent
+                            folks
+                        </h1>
+                        <h2>
+                            Community-run & non-profit—by the people, for the
+                            people
+                        </h2>
+                        <div class="flex gap-2 justify-center items-center">
+                            <svg
+                                width="16"
+                                height="16"
+                                viewBox="0 0 17 18"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M8.5 0.863525C5.39344 0.863525 2.875 3.38196 2.875 6.48853C2.875 7.89509 3.39272 9.17964 4.24585 10.1659L5.75403 11.801H1.78857L0.154053 17.1135H16.8459L15.2114 11.801H12.875L11.9375 13.051H14.2886L15.1541 15.8635H1.84595L2.71143 13.051H6.90698L8.5 14.7777L12.7542 10.1659C13.6073 9.17964 14.125 7.89509 14.125 6.48853C14.125 3.38196 11.6066 0.863525 8.5 0.863525ZM8.5 4.61353C9.53562 4.61353 10.375 5.4529 10.375 6.48853C10.375 7.52415 9.53562 8.36353 8.5 8.36353C7.46438 8.36353 6.625 7.52415 6.625 6.48853C6.625 5.4529 7.46438 4.61353 8.5 4.61353Z"
+                                    fill="#1C1917"></path>
+                            </svg>
+
+                            <p>
+                                Located on Tory St in Te Aro, Wellington, New
+                                Zealand
+                            </p>
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <h3>The bigger picture</h3>
-                    <p>
-                        We have no idea if this is going to work, or how it will
-                        pan out, but we’re going to put in our all and see what
-                        happens.
-                        <br />
-                        <br />
-                        The immediate goal is to help people here in Wellington get
-                        started on their journey towards a career in tech, but we’re
-                        not going to be satisfied if we achieve that—we want to go
-                        further.
-                        <br />
-                        <br />
-                        By documenting the journey and our learnings, should we be
-                        successful it’s our ambition to share a blueprint for folks
-                        in other communities around the world to create their own
-                        similar community spaces.
-                    </p>
-                </div>
-                <div class="flex flex-col gap-8">
-                    <h3>Fundraising</h3>
-                    <p>
-                        So far, we’ve covered all of the costs out of our own
-                        pocket, and we’ll continue to do so. However, we’d be
-                        very grateful if anyone wishes to make a contribution
-                        towards the space.
-                        <br />
-                        <br />
-                        We’re not a registered charity at this stage, as it’s still
-                        early days, but all money donated will go towards either
-                        the cost of equipment, furnishings or the rent of the space
-                        itself—it’s entirely not-for-profit, too, so if we ended
-                        up with a surplus of cash it’d all go into a pot to pay for
-                        future bills and improvements.
-                        <br />
-                        <br />
-                        We’re not a registered charity at this stage, as it’s still
-                        early days, but all money donated will go towards either
-                        the cost of equipment, furnishings or the rent of the space
-                        itself—it’s entirely not-for-profit, too, so if we ended
-                        up with a surplus of cash it’d all go into a pot to pay for
-                        future bills and improvements.
-                    </p>
-                    <h4>Setup costs</h4>
-                    <ul>
-                        <li class="flex justify-between">
-                            <p class="w-full">Desk materials</p>
-                            <p>$663.67</p>
-                            <p
-                                class="bg-green-300 text-green-700 font-bold text-xs rounded justify-center items-center p-2"
+                    <div class="flex gap-16 mt-24">
+                        <div class="flex flex-col gap-4">
+                            <svg
+                                width="80"
+                                height="81"
+                                viewBox="0 0 80 81"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
                             >
-                                PAID
+                                <path
+                                    d="M44 50.801H36L37 46.801C37 46.801 38 46.801 43 47.801L44 50.801ZM46 50.801H34C31 51.801 28 54.801 28 54.801H52C52 54.801 49 51.801 46 50.801ZM16 14.801V44.801H64V14.801H16ZM60 40.801H20V18.801H60V40.801ZM65.379 59.316C65.156 58.426 64.356 57.801 63.438 57.801H16.562C15.644 57.801 14.844 58.426 14.622 59.316L13 65.801H67L65.379 59.316ZM24 62.801H21V60.801H24V62.801ZM31 62.801H28V60.801H31V62.801ZM38 62.801H35V60.801H38V62.801ZM45 62.801H42V60.801H45V62.801ZM52 62.801H49V60.801H52V62.801ZM59 62.801H56V60.801H59V62.801Z"
+                                    fill="#292524"></path>
+                                <rect
+                                    x="2"
+                                    y="2.30103"
+                                    width="76"
+                                    height="76"
+                                    rx="6"
+                                    stroke="#292524"
+                                    stroke-width="4"></rect>
+                            </svg>
+
+                            <h4>Equipment</h4>
+                            <p>
+                                No equipment? No problem. You’re welcome to
+                                bring your own laptop, but if that’s not an
+                                option we have computers for you to use. Just
+                                bring yourself and a dose of curiosity.
                             </p>
-                        </li>
-                    </ul>
-                    <h4>Recurring costs</h4>
-                    <ul><li></li></ul>
-                </div>
-            </section>
-        </main>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <svg
+                                width="81"
+                                height="81"
+                                viewBox="0 0 81 81"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M40.6667 13.3411L13.6667 22.845V57.261L40.6667 67.261L67.6667 57.261V22.845L40.6667 13.3411ZM38.6667 18.2844V48.0012L17.6667 55.7786V25.677L38.6667 18.2844ZM42.6667 18.2844L63.6667 25.677V55.7786L56.6667 53.1868V35.634L49.6667 33.1692V50.595L42.6667 48.0012V18.2844ZM32.6667 28.8215L28.6667 30.2219V36.7004L32.6667 35.2903V28.8215ZM27.6667 30.5813L23.6667 31.9817V38.4504L27.6667 37.05V30.5813ZM32.6667 36.3508L28.6667 37.7512V43.8313L32.6667 42.4016V36.3508ZM27.6667 38.1008L23.6667 39.511V45.6204L27.6667 44.1907V38.1008Z"
+                                    fill="#292524"></path>
+                                <rect
+                                    x="2.66666"
+                                    y="2.30103"
+                                    width="76"
+                                    height="76"
+                                    rx="6"
+                                    stroke="#292524"
+                                    stroke-width="4"></rect>
+                            </svg>
+
+                            <h4>Space</h4>
+                            <p>
+                                Self-studying from home can prove difficult for
+                                even the most focused of us. Having a quite
+                                place to study from goes a long way, especially
+                                if it’s not your home environment.
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <svg
+                                width="81"
+                                height="81"
+                                viewBox="0 0 81 81"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M32.8346 13.801C30.9016 13.801 29.3346 15.368 29.3346 17.301V17.801C29.3346 19.734 30.8346 21.801 32.8346 21.801C34.8346 21.801 36.3346 19.734 36.3346 17.801V17.301C36.3346 15.368 34.7676 13.801 32.8346 13.801ZM47.8346 13.801C45.9016 13.801 44.3346 15.368 44.3346 17.301V17.801C44.3346 19.734 45.8346 21.801 47.8346 21.801C49.8346 21.801 51.3346 19.734 51.3346 17.801V17.301C51.3346 15.368 49.7676 13.801 47.8346 13.801ZM53.9596 24.4729C53.7896 24.4425 53.6145 24.4433 53.442 24.4768L51.7721 24.801L45.1158 25.7893C45.1158 25.7893 38.3982 24.801 36.6412 24.801H32.8228C30.1248 24.801 27.7601 25.4371 26.4381 25.8811C25.7541 26.1111 25.247 26.6868 25.108 27.3948L23.4068 36.0725C23.1908 37.1735 23.4478 38.314 24.1138 39.217L26.7681 42.8147L26.3717 64.137L25.7955 64.5042C25.5095 64.6892 25.3346 65.0069 25.3346 65.3479V66.801H29.4342C29.9462 66.801 30.3743 66.4135 30.4283 65.9045L32.3228 47.801H33.3228L35.3346 66.801H39.3346V29.801L45.3834 29.5295L52.3971 27.801H55.0553C55.4503 27.801 55.7986 27.5433 55.9146 27.1663L56.1646 26.3557C56.2646 26.0307 56.1314 25.6772 55.8404 25.5002L54.4439 24.6545C54.2934 24.5635 54.1296 24.5033 53.9596 24.4729ZM56.0045 29.6565L55.3248 29.8342H52.4928L45.7115 31.5315L41.3346 31.801V66.801H45.3346L47.3228 47.801H48.3463L50.2408 65.9045C50.2948 66.4135 50.7229 66.801 51.2349 66.801H55.3345V65.2327C55.3345 64.9567 55.2201 64.6931 55.0201 64.5042L54.2799 63.8088L53.899 42.8147L56.5533 39.217C57.2193 38.315 57.4753 37.1735 57.2603 36.0725L56.0045 29.6565Z"
+                                    fill="#292524"></path>
+                                <rect
+                                    x="2.33337"
+                                    y="2.30103"
+                                    width="76"
+                                    height="76"
+                                    rx="6"
+                                    stroke="#292524"
+                                    stroke-width="4"></rect>
+                            </svg>
+
+                            <h4>Community</h4>
+                            <p>
+                                Learning is tough. Learning development can be,
+                                at times, really tough. Things like
+                                impost-syndrome are common & hard to work
+                                through alone—now you don’t have to.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section class="flex flex-col gap-48 mx-auto items-center">
+                    <div class="flex flex-col gap text-center max-w-xl">
+                        <h5>ABOUT</h5>
+                        <p class="text-4xl font-glamour my-8">
+                            What's this all about?
+                        </p>
+                        <p>
+                            Higher education (university/college, bootcamps) is
+                            a great pathway for many folks to end up in
+                            fulfilling careers in tech.
+                            <br />
+                            <br />
+                            For some people, however, it’s not always a clear and
+                            immediate option.
+                            <br />
+                            <br />
+                            We think there’s a missing step for folks who either
+                            can’t afford to study, lack the confidence, or who are
+                            neurodivergent.
+                            <br />
+                            <br />
+                            It’s our goal to change that.
+                        </p>
+                    </div>
+                    <Image
+                        src={image2}
+                        width={800}
+                        class="self-center -my-48"
+                    />
+                    <div
+                        class="flex flex-col gap-8 items-center text-center max-w-xl"
+                    >
+                        <h5>COMMUNITY SPACE</h5>
+                        <p class="text-4xl font-glamour">What we’re doing</p>
+                        <p>
+                            We’re opening a study-space in Te Aro, Wellington,
+                            to create a place for folks to be able to study, be
+                            a part of a community, and ultimately, set out on
+                            their own path towards a career in tech.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-8 items-center max-w-2xl">
+                        <h5>PRICING</h5>
+                        <p class="text-4xl font-glamour">Membership fee</p>
+                        <p class="max-w-xl text-center">
+                            We want the space to be sustainable but also
+                            financially accessible. Membership is free of any
+                            contracts or obligations.
+                        </p>
+                        <div class="flex gap-16">
+                            <div class="flex flex-col gap-4 text-center">
+                                <div
+                                    class="flex gap-2 items-end justify-center"
+                                >
+                                    <p class="text-6xl font-glamour">$10</p>
+                                    <p>week</p>
+                                </div>
+                                <h4>Membership</h4>
+                                <p>
+                                    As a member of the space, you’ll have access
+                                    to it and the computer equipment whenever
+                                    we’re open: Tuesday to Sunday, 11am to 7pm.
+                                </p>
+                            </div>
+                            <div class="flex flex-col gap-4 text-center">
+                                <div
+                                    class="flex gap-2 items-end justify-center"
+                                >
+                                    <p class="text-6xl font-glamour">$0</p>
+                                    <p>week</p>
+                                </div>
+                                <h4>Concession</h4>
+                                <p>
+                                    If you can’t afford to pay for membership at
+                                    the moment, but want a place to study, we’ll
+                                    do our best to accommodate you—just reach
+                                    out.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p>
+                                Want to help pay for someone’s membership who
+                                can’t afford to do so?
+                            </p>
+                            <a href="#">Let us know.</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <h5 class="text-center">GAME PLAN</h5>
+                        <p class="text-4xl font-glamour text-center">
+                            The bigger picture
+                        </p>
+                        <p class="max-w-xl">
+                            We have no idea if this is going to work, or how it
+                            will pan out, but we’re going to put in our all and
+                            see what happens.
+                            <br />
+                            <br />
+                            The immediate goal is to help people here in Wellington
+                            get started on their journey towards a career in tech,
+                            but we’re not going to be satisfied if we achieve that—we
+                            want to go further.
+                            <br />
+                            <br />
+                            By documenting the journey and our learnings, should
+                            we be successful it’s our ambition to share a blueprint
+                            for folks in other communities around the world to create
+                            their own similar community spaces.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-8">
+                        <h5 class="text-center">DONATIONS</h5>
+                        <p class="text-4xl font-glamour text-center">
+                            Fundraising
+                        </p>
+                        <p class="max-w-xl">
+                            So far, we’ve covered all of the costs out of our
+                            own pocket, and we’ll continue to do so. However,
+                            we’d be very grateful if anyone wishes to make a
+                            contribution towards the space.
+                            <br />
+                            <br />
+                            We’re not a registered charity at this stage (it's still
+                            early days), but all money donated will go towards either
+                            the cost of equipment, furnishings or the rent of the
+                            space itself—it’s entirely not-for-profit, too, so if
+                            we ended up with a surplus of cash it’d all go into a
+                            pot to pay for future bills and improvements.
+                            <br />
+                            <br />
+                            We’re not a registered charity at this stage, as it’s
+                            still early days, but all money donated will go towards
+                            either the cost of equipment, furnishings or the rent
+                            of the space itself—it’s entirely not-for-profit, too,
+                            so if we ended up with a surplus of cash it’d all go
+                            into a pot to pay for future bills and improvements.
+                        </p>
+                        <h4>Setup costs</h4>
+                        <ul class="flex flex-col gap-4">
+                            <li class="flex justify-between gap-4">
+                                <p class="w-full">Desk materials</p>
+                                <p>$663.67</p>
+                                <Badge isPaid="true" />
+                            </li>
+                            <li class="flex justify-between gap-4">
+                                <p class="w-full">Carpenter (desks)</p>
+                                <p>$904.01</p>
+                                <Badge isPaid="true" />
+                            </li>
+                            <li class="flex justify-between gap-4">
+                                <p class="w-full">Computer equipment x 6</p>
+                                <p>$2,604.61</p>
+                                <Badge />
+                            </li>
+                        </ul>
+                        <h4>Recurring costs</h4>
+                        <ul>
+                            <li class="flex justify-between gap-4">
+                                <p class="w-full">Rent</p>
+                                <p>$125/week</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <Image
+                        src={youCanDoAnything}
+                        width={560}
+                        class="self-center"
+                    />
+                </section>
+                <footer class="flex flex-col gap-16 items-center">
+                    <p>made with 💖 from the Trades Hall, Te Aro</p>
+                    <svg
+                        width="162"
+                        height="23"
+                        viewBox="0 0 162 23"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M0.484375 22V21.0625L0.828125 21.0312C2.04688 20.875 3.54688 19 4.67188 16.2188L10.7031 1.5H11.9531L19.3594 16.2188C19.9219 17.2812 21.6094 21.2812 24.0469 21.0625L24.0781 22H13.9219V21.0625L14.2656 21.0312C14.7656 20.9688 15.0156 20.5625 15.0156 19.875C15.0156 19.0312 14.6406 17.8125 13.9219 16.2812L13.5469 15.5H6.51562L6.23438 16.25C5.82812 17.4062 5.64062 18.375 5.64062 19.1562C5.64062 20.25 6.04688 20.9688 6.82812 21.0312L7.23438 21.0625V21.25C7.26562 21.3438 7.26562 21.4688 7.26562 21.6562V22H0.484375ZM7.01562 14.25H12.9531L9.64062 7.5L7.01562 14.25ZM24.4844 10.0625L30.3594 7.75H31.2656V12.3125C31.8906 10.875 33.1719 8.21875 35.1406 7.875C36.9844 7.5625 37.8281 8.5625 38.1094 10.2188C38.3281 11.5312 37.2031 12.5938 36.4844 12.3438C35.6719 12.0625 34.9219 11.4375 34.0156 11.4375C33.2344 11.4375 32.3594 11.9062 31.2656 13.4688V16.2188C31.2656 19 31.9844 20.875 33.1406 21.0312L33.4844 21.0625C33.4844 21.0625 33.5156 21.2812 33.5156 21.6562V22H24.4844V21.6562C24.4844 21.2812 24.5156 21.0625 24.5156 21.0625L24.7969 21.0312C26.0469 20.875 26.6719 18.8438 26.6719 16C26.6719 12.125 26.4219 11.3125 24.7969 10.5312L24.5156 10.375C24.5156 10.375 24.4844 10.25 24.4844 10.0625ZM46.4531 22.1562C41.4219 22.1562 38.2344 19.3125 38.2344 14.875C38.2344 10.4375 41.4219 7.59375 46.4531 7.59375C51.4219 7.59375 54.6094 10.4375 54.6094 14.875C54.6094 19.3125 51.4219 22.1562 46.4531 22.1562ZM46.4531 8.625C44.4844 8.625 43.2344 11.0625 43.2344 14.875C43.2344 18.6875 44.4844 21.125 46.4531 21.125C48.3906 21.125 49.6406 18.6875 49.6406 14.875C49.6406 11.0625 48.3906 8.625 46.4531 8.625ZM54.7969 10.0625L60.6719 7.75H61.5781V12.3125C62.2031 10.875 63.4844 8.21875 65.4531 7.875C67.2969 7.5625 68.1406 8.5625 68.4219 10.2188C68.6406 11.5312 67.5156 12.5938 66.7969 12.3438C65.9844 12.0625 65.2344 11.4375 64.3281 11.4375C63.5469 11.4375 62.6719 11.9062 61.5781 13.4688V16.2188C61.5781 19 62.2969 20.875 63.4531 21.0312L63.7969 21.0625C63.7969 21.0625 63.8281 21.2812 63.8281 21.6562V22H54.7969V21.6562C54.7969 21.2812 54.8281 21.0625 54.8281 21.0625L55.1094 21.0312C56.3594 20.875 56.9844 18.8438 56.9844 16C56.9844 12.125 56.7344 11.3125 55.1094 10.5312L54.8281 10.375C54.8281 10.375 54.7969 10.25 54.7969 10.0625ZM68.7969 15.5938C68.7969 10.7188 71.9219 7.59375 76.8281 7.59375C80.9219 7.59375 83.5156 10.4688 83.5156 14.9062L73.7656 15.0625C74.2031 17.8438 75.7656 20 79.7031 19.75C80.5781 19.6875 81.8281 18.9688 82.8906 17.4375L83.3906 17.875C81.7656 20.9688 78.4531 22.1562 76.1719 22.1562C71.6719 22.1562 68.7969 19.5938 68.7969 15.5938ZM76.5781 8.875C74.7656 8.875 73.6094 10.9688 73.6719 14.0625H77.4531C80.7031 13.9375 79.8281 8.875 76.5781 8.875ZM84.2344 10.0625L90.1094 7.75H91.0156V12.3125C91.6406 10.875 92.9219 8.21875 94.8906 7.875C96.7344 7.5625 97.5781 8.5625 97.8594 10.2188C98.0781 11.5312 96.9531 12.5938 96.2344 12.3438C95.4219 12.0625 94.6719 11.4375 93.7656 11.4375C92.9844 11.4375 92.1094 11.9062 91.0156 13.4688V16.2188C91.0156 19 91.7344 20.875 92.8906 21.0312L93.2344 21.0625C93.2344 21.0625 93.2656 21.2812 93.2656 21.6562V22H84.2344V21.6562C84.2344 21.2812 84.2656 21.0625 84.2656 21.0625L84.5469 21.0312C85.7969 20.875 86.4219 18.8438 86.4219 16C86.4219 12.125 86.1719 11.3125 84.5469 10.5312L84.2656 10.375C84.2656 10.375 84.2344 10.25 84.2344 10.0625ZM98.2344 15.5938C98.2344 10.7188 101.359 7.59375 106.266 7.59375C110.359 7.59375 112.953 10.4688 112.953 14.9062L103.203 15.0625C103.641 17.8438 105.203 20 109.141 19.75C110.016 19.6875 111.266 18.9688 112.328 17.4375L112.828 17.875C111.203 20.9688 107.891 22.1562 105.609 22.1562C101.109 22.1562 98.2344 19.5938 98.2344 15.5938ZM106.016 8.875C104.203 8.875 103.047 10.9688 103.109 14.0625H106.891C110.141 13.9375 109.266 8.875 106.016 8.875ZM115.078 9.53125H113.203V9.03125C114.766 8.71875 117.078 6.625 119.016 3.6875H119.766V7.75H124.078V9.53125H119.766C119.766 9.53125 119.734 15.6875 119.734 18.4062C119.734 19.7812 120.078 20.125 121.359 20.125C121.953 20.125 123.141 19.7812 124.141 18.375L124.484 18.7812C122.797 21.6875 120.203 22.1562 119.109 22.1562C115.984 22.1562 115.078 21.2188 115.078 17.625V9.53125ZM124.422 21.6562C124.422 21.2812 124.453 21.0625 124.453 21.0625L124.766 21.0312C125.984 20.875 126.672 18.8438 126.672 16.0312C126.672 12.125 126.391 11.3125 124.766 10.5312L124.453 10.375C124.453 10.375 124.422 10.2188 124.422 10.0625L130.359 7.75H131.266V16.2188C131.266 19 132.016 20.875 133.141 21.0312L133.453 21.0625C133.453 21.0625 133.516 21.2812 133.516 21.6562V22H124.422V21.6562ZM126.203 3.0625C126.203 1.53125 127.172 0.5625 128.734 0.5625C130.266 0.5625 131.234 1.53125 131.234 3.0625C131.234 4.59375 130.266 5.5625 128.734 5.5625C127.172 5.5625 126.203 4.59375 126.203 3.0625ZM133.922 21.6562C133.922 21.2812 133.953 21.0625 133.953 21.0625L134.266 21.0312C135.516 20.875 136.172 18.8438 136.172 16C136.172 12.125 135.891 11.3125 134.266 10.5312L133.953 10.375C133.953 10.375 133.922 10.25 133.922 10.0625L139.828 7.75H140.734V9.90625C141.578 8.78125 143.609 7.59375 146.266 7.59375C148.797 7.59375 149.766 9.46875 149.766 12.4062V16.2188C149.766 19 150.484 20.875 151.641 21.0312L151.953 21.0625C151.953 21.0625 151.984 21.2812 151.984 21.6562V22H143.203V21.0625L143.391 21.0312C144.547 20.8438 145.172 19 145.172 16.2188V12.875C145.172 11.3438 144.359 9.53125 143.047 9.53125C142.391 9.53125 141.609 10 140.734 11.1562V16.2188C140.734 19 141.422 20.9062 142.609 21.0312L142.891 21.0625V22H133.922V21.6562ZM152.391 21.6562C152.391 21.2812 152.422 21.0625 152.422 21.0625L152.734 21.0312C153.953 20.875 154.641 18.8438 154.641 16.0312C154.641 12.125 154.359 11.3125 152.734 10.5312L152.422 10.375C152.422 10.375 152.391 10.2188 152.391 10.0625L158.328 7.75H159.234V16.2188C159.234 19 159.984 20.875 161.109 21.0312L161.422 21.0625C161.422 21.0625 161.484 21.2812 161.484 21.6562V22H152.391V21.6562ZM154.172 3.0625C154.172 1.53125 155.141 0.5625 156.703 0.5625C158.234 0.5625 159.203 1.53125 159.203 3.0625C159.203 4.59375 158.234 5.5625 156.703 5.5625C155.141 5.5625 154.172 4.59375 154.172 3.0625Z"
+                            fill="#1C1917"></path>
+                    </svg>
+                </footer>
+            </main>
+        </div>
     </body>
 </html>
