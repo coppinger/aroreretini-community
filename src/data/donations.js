@@ -85,6 +85,22 @@ const donations = [
         pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/49e2b179-b7a9-4e0e-a691-32e3cdae15de-profile_image-70x70.png",
     },
     {
+        name: "dnbull",
+        socials: {
+            twitch: "https://twitch.tv/dnbull",
+        },
+        amount: "5",
+        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/3aa3d56c-fe67-4c5e-981c-3fcb36d41894-profile_image-70x70.png",
+    },
+    {
+        name: "KodBilen",
+        socials: {
+            twitch: "https://twitch.tv/kodbilen",
+        },
+        amount: "5",
+        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/81aae9fa-03c3-4402-b891-6b526e1e81ae-profile_image-70x70.png",
+    },
+    {
         name: "Anonmous",
         socials: {
             none: "true",
