@@ -1,7 +1,7 @@
 const donations = [
     {
         name: "whitep4nth3r",
-        amount: "100",
+        amount: "110",
         socials: {
             twitch: "https://twitch.tv/whitep4nth3r",
             twitter: "https://twitter.com/whitep4nth3r",
@@ -75,6 +75,14 @@ const donations = [
         },
         amount: "5",
         pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/f3118110-31b0-4ce7-8eb0-68e89b764b1d-profile_image-70x70.png",
+    },
+    {
+        name: "bibii01_exe",
+        socials: {
+            twitch: "https://twitch.tv/bibii01_exe",
+        },
+        amount: "5",
+        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/49e2b179-b7a9-4e0e-a691-32e3cdae15de-profile_image-70x70.png",
     },
     {
         name: "Anonmous",
