@@ -1,11 +1,16 @@
 ---
 import "../styles/global.css";
+
 import { Image } from "@astrojs/image/components";
+import Badge from "../components/badge.astro";
+
 import cover from "../../public/cover.png";
 import image2 from "../../public/image-2.png";
 import youCanDoAnything from "../../public/you-can-do-anything.png";
 import progress from "../../public/progress-photos.png";
-import Badge from "../components/badge.astro";
+
+import donations from "../data/donations.js";
+
 const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
 ---
 
@@ -343,14 +348,6 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             space itself—it’s entirely not-for-profit, too, so if
                             we ended up with a surplus of cash it’d all go into a
                             pot to pay for future bills and improvements.
-                            <br />
-                            <br />
-                            We’re not a registered charity at this stage, as it’s
-                            still early days, but all money donated will go towards
-                            either the cost of equipment, furnishings or the rent
-                            of the space itself—it’s entirely not-for-profit, too,
-                            so if we ended up with a surplus of cash it’d all go
-                            into a pot to pay for future bills and improvements.
                         </p>
                         <h4>Setup costs</h4>
                         <ul class="flex flex-col gap-4">
@@ -386,6 +383,136 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150 text-center"
                             target="_blank">Contribute here</a
                         >
+                    </div>
+                    <div class="flex flex-col gap-8" id="Fundraiser">
+                        <h5 class="text-center">Contributors</h5>
+                        <p class="text-4xl font-glamour text-center">
+                            THANK YOU
+                        </p>
+                        <p class="max-w-xl text-center">
+                            These generous folks and organisations have
+                            contributed towards the cost of setting up and
+                            getting Aroreretini running. Thank you for
+                            generously answering the call.
+                        </p>
+                        <ul class="flex flex-col gap-8">
+                            {
+                                donations.map(
+                                    ({ name, amount, socials, pfp }) => {
+                                        return (
+                                            <li class="flex justify-between items-center">
+                                                <div class="flex gap-4 items-center">
+                                                    {pfp ? (
+                                                        <img
+                                                            src={pfp}
+                                                            width={64}
+                                                            height={64}
+                                                            class="rounded-md"
+                                                        />
+                                                    ) : (
+                                                        <svg
+                                                            width="64"
+                                                            height="65"
+                                                            viewBox="0 0 64 65"
+                                                            fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                        >
+                                                            <path
+                                                                d="M39.2729 19.0176C34.848 19.0176 32 22.2176 32 22.2176C32 22.2176 29.152 19.0176 24.7271 19.0176C19.9076 19.0176 16 22.9251 16 27.7447C16 36.4718 32 46.2768 32 46.2768C32 46.2768 48 36.4718 48 27.7447C48 22.9251 44.0924 19.0176 39.2729 19.0176Z"
+                                                                fill="#292524"
+                                                            />
+                                                            <rect
+                                                                x="2"
+                                                                y="2.64697"
+                                                                width="60"
+                                                                height="60"
+                                                                rx="6"
+                                                                stroke="#292524"
+                                                                stroke-width="4"
+                                                            />
+                                                        </svg>
+                                                    )}
+                                                    <div class="flex items-center gap-4">
+                                                        <p>{name}</p>
+                                                        {socials.twitter ? (
+                                                            <a
+                                                                target="_blank"
+                                                                href={
+                                                                    socials.twitter
+                                                                }
+                                                            >
+                                                                <svg
+                                                                    width="16"
+                                                                    height="17"
+                                                                    viewBox="0 0 16 17"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <g clip-path="url(#clip0_97_82)">
+                                                                        <path
+                                                                            d="M16.02 3.98684C15.4287 4.24934 14.795 4.42559 14.1287 4.50559C14.8087 4.09809 15.3312 3.45309 15.5762 2.68559C14.9412 3.06184 14.235 3.33559 13.4862 3.48309C12.8862 2.84309 12.0312 2.44434 11.085 2.44434C9.2675 2.44434 7.79375 3.91684 7.79375 5.73434C7.79375 5.99184 7.82375 6.24309 7.88 6.48434C5.145 6.34684 2.72125 5.03684 1.0975 3.04559C0.813747 3.53309 0.652497 4.09809 0.652497 4.70059C0.652497 5.84184 1.2325 6.84934 2.11625 7.44059C1.57625 7.42309 1.06875 7.27434 0.624997 7.02809C0.624997 7.04184 0.624997 7.05559 0.624997 7.06934C0.624997 8.66434 1.76 9.99309 3.26375 10.2968C2.98875 10.3718 2.6975 10.4118 2.3975 10.4118C2.185 10.4118 1.97875 10.3918 1.7775 10.3518C2.1975 11.6581 3.4125 12.6118 4.85125 12.6381C3.72625 13.5206 2.3075 14.0456 0.764997 14.0456C0.498747 14.0456 0.237497 14.0306 -0.0187531 13.9993C1.43625 14.9343 3.16625 15.4781 5.025 15.4781C11.0775 15.4781 14.3875 10.4643 14.3875 6.11684C14.3875 5.97434 14.3837 5.83059 14.3787 5.69059C15.0212 5.22684 15.5787 4.64684 16.02 3.98684Z"
+                                                                            fill="#44403C"
+                                                                        />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_97_82">
+                                                                            <rect
+                                                                                width="16"
+                                                                                height="16"
+                                                                                fill="white"
+                                                                                transform="translate(0 0.646973)"
+                                                                            />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </a>
+                                                        ) : (
+                                                            ""
+                                                        )}
+                                                        {socials.twitch ? (
+                                                            <a
+                                                                target="_blank"
+                                                                href={
+                                                                    socials.twitch
+                                                                }
+                                                            >
+                                                                <svg
+                                                                    width="16"
+                                                                    height="17"
+                                                                    viewBox="0 0 16 17"
+                                                                    fill="none"
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                >
+                                                                    <g clip-path="url(#clip0_97_80)">
+                                                                        <path
+                                                                            d="M1.7 0.966797L0.639999 3.7868V14.4068H4.16V16.3268H6.53L8.45 14.4068H11.33L15.36 10.3868V0.966797H1.7ZM3.52 2.5668H13.76V9.6068L11.84 11.5268H8L6.08 13.4468V11.5268H3.52V2.5668ZM6.4 4.8068V9.2868H8.32V4.8068H6.4ZM9.6 4.8068V9.2868H11.52V4.8068H9.6Z"
+                                                                            fill="#44403C"
+                                                                        />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_97_80">
+                                                                            <rect
+                                                                                width="16"
+                                                                                height="16"
+                                                                                fill="white"
+                                                                                transform="translate(0 0.646973)"
+                                                                            />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </a>
+                                                        ) : (
+                                                            ""
+                                                        )}
+                                                    </div>
+                                                </div>
+                                                <p>${amount}</p>
+                                            </li>
+                                        );
+                                    }
+                                )
+                            }
+                        </ul>
                     </div>
                     <div class="flex flex-col gap-8" id="Contact">
                         <h5 class="text-center">CONTACT</h5>

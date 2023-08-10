@@ -4,8 +4,8 @@ const { isPaid } = Astro.props;
 
 <p
     class={isPaid
-        ? "flex shrink-0 w-fit bg-green-300 text-green-700 font-bold text-xs rounded justify-center items-center p-2 tracking-widest"
-        : "flex shrink-0 w-fit bg-orange-300 text-orange-700 font-bold text-xs rounded justify-center items-center p-2 tracking-widest"}
+        ? "flex shrink-0 w-fit h-fit bg-green-300 text-green-700 font-bold text-xs rounded justify-center items-center p-2 tracking-widest"
+        : "flex shrink-0 w-fit h-fit bg-orange-300 text-orange-700 font-bold text-xs rounded justify-center items-center p-2 tracking-widest"}
 >
     {isPaid ? "PAID" : "UNPAID"}
 </p>
