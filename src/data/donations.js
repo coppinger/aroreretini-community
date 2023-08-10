@@ -69,6 +69,14 @@ const donations = [
         pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/ce98d4f0-bfe0-48d6-ba01-9bb3e0b40450-profile_image-70x70.png",
     },
     {
+        name: "StoutFella",
+        socials: {
+            twitch: "https://twitch.tv/stoutfella",
+        },
+        amount: "5",
+        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/f3118110-31b0-4ce7-8eb0-68e89b764b1d-profile_image-70x70.png",
+    },
+    {
         name: "Anonmous",
         socials: {
             none: "true",

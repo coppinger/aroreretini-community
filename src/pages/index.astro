@@ -11,7 +11,14 @@ import progress from "../../public/progress-photos.png";
 
 import donations from "../data/donations.js";
 
-const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
+const menuItems = [
+    "About",
+    "Story",
+    "Pricing",
+    "Fundraiser",
+    "Contributors",
+    "Contact",
+];
 ---
 
 <html lang="en">
@@ -379,13 +386,16 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             Would you like to help out by making a donation, big
                             or small?<br />We'd be incredibly grateful.
                         </p>
+                        <p class="animate-bounce text-center text-7xl">👇</p>
                         <a
                             href="https://streamelements.com/thecoppinger/tip"
                             class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150 text-center"
-                            target="_blank">Contribute here</a
-                        >
+                            target="_blank"
+                            >Contribute here
+                        </a>
+                        <p class="text-4xl text-center">💖</p>
                     </div>
-                    <div class="flex flex-col gap-8" id="Fundraiser">
+                    <div class="flex flex-col gap-8" id="Contributors">
                         <h5 class="text-center">Contributors</h5>
                         <p class="text-4xl font-glamour text-center">
                             THANK YOU
@@ -396,7 +406,7 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                             getting Aroreretini running. Thank you for
                             generously answering the call.
                         </p>
-                        <h3>Individuals</h3>
+                        <h3 class="text-center">Individuals</h3>
                         <ul class="flex flex-col gap-8">
                             {
                                 donations.map(
@@ -515,6 +525,18 @@ const menuItems = ["About", "Story", "Pricing", "Fundraiser", "Contact"];
                                 )
                             }
                         </ul>
+                        <h3 class="text-center">Organisations & Companies</h3>
+                        <p class="text-center">
+                            Would you like to contribute on behalf of a
+                            organisation or company?
+                        </p>
+                        <p class="text-center">
+                            Fire us a line: <a
+                                class="underline underline-offset-2 hover:underline-offset-4 transition-all duration-150"
+                                href="mailto:hello@aroreretini.community"
+                                >hello@aroreretini.community</a
+                            >
+                        </p>
                     </div>
                     <div class="flex flex-col gap-8" id="Contact">
                         <h5 class="text-center">CONTACT</h5>
