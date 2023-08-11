@@ -83,7 +83,7 @@ const donations = [
             twitch: "https://twitch.tv/stoutfella",
         },
         amount: "5",
-        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/f3118110-31b0-4ce7-8eb0-68e89b764b1d-profile_image-70x70.png",
+        pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/5b83dca6-6dea-452e-a5b4-06da6e6ce257-profile_image-70x70.png",
     },
     {
         name: "bibii01_exe",
