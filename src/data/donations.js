@@ -82,7 +82,7 @@ const donations = [
         socials: {
             twitch: "https://twitch.tv/stoutfella",
         },
-        amount: "$5",
+        amount: "$15",
         pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/5b83dca6-6dea-452e-a5b4-06da6e6ce257-profile_image-70x70.png",
     },
     {
