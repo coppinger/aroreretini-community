@@ -52,6 +52,14 @@ const donations = [
         pfp: "https://pbs.twimg.com/profile_images/1411181356919443458/yxJ0RVry_400x400.jpg",
     },
     {
+        name: "Scott Green",
+        socials: {
+            twitch: "https://twitch.tv/greenmacnz",
+        },
+        amount: "$35",
+        pfp: "/scotty-g.jpg",
+    },
+    {
         name: "Leon",
         socials: {
             twitter: "https://twitter.com/LeonTwizzle",
