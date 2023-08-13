@@ -17,6 +17,15 @@ const donations = [
         pfp: "https://github.com/darthmeme.png",
     },
     {
+        name: "atunasashimi",
+        amount: "$86",
+        socials: {
+            twitch: "https://twitch.tv/atunasashimi",
+            twitter: "https://twitter.com/atunasashimi",
+        },
+        pfp: "https://pbs.twimg.com/profile_images/1666804207964520448/P6N6SvxV_400x400.jpg",
+    },
+    {
         name: "creepio",
         socials: {
             twitch: "https://twitch.tv/threecreepio",
