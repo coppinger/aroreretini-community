@@ -26,6 +26,14 @@ const donations = [
         pfp: "https://pbs.twimg.com/profile_images/1666804207964520448/P6N6SvxV_400x400.jpg",
     },
     {
+        name: "crettbollins",
+        socials: {
+            twitch: "https://twitch.tv/crettbollins",
+        },
+        amount: "$74.80",
+        pfp: "/brett.png",
+    },
+    {
         name: "creepio",
         socials: {
             twitch: "https://twitch.tv/threecreepio",
@@ -65,7 +73,7 @@ const donations = [
         socials: {
             twitch: "https://twitch.tv/NobreHD",
         },
-        amount: "$45",
+        amount: "$65",
         pfp: "/nobre.png",
     },
     {
@@ -123,7 +131,7 @@ const donations = [
         socials: {
             twitch: "https://twitch.tv/dnbull",
         },
-        amount: "$5",
+        amount: "$15",
         pfp: "https://static-cdn.jtvnw.net/jtv_user_pictures/3aa3d56c-fe67-4c5e-981c-3fcb36d41894-profile_image-70x70.png",
     },
     {
