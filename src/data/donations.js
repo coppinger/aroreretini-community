@@ -17,6 +17,41 @@ const donations = [
         pfp: "https://github.com/darthmeme.png",
     },
     {
+        name: "Smellsworth",
+        socials: {
+            twitch: "https://twitch.tv/smellsworth",
+            twitter: "https://twitter.com/mattellsworth",
+        },
+        amount: "$100",
+        pfp: "https://pbs.twimg.com/profile_images/1636736489789829120/TtEdmx-G_400x400.jpg",
+    },
+    {
+        name: "mono_nz",
+        socials: {
+            twitter: "https://twitter.com/mononzz",
+            twitch: "https://www.twitch.tv/mono_nz",
+        },
+        amount: "$100",
+        pfp: "https://pbs.twimg.com/profile_images/1596421733988253696/gnw6fMks_400x400.jpg",
+    },
+    {
+        name: "Greg Gilbert",
+        amount: "$100",
+        socials: {
+            twitter: "https://twitter.com/greggilbertme",
+        },
+        pfp: "https://pbs.twimg.com/profile_images/1688833453943308288/EJaiyrjj_400x400.jpg",
+    },
+    {
+        name: "creepio",
+        socials: {
+            twitch: "https://twitch.tv/threecreepio",
+            twitter: "https://twitter.com/threecreepio",
+        },
+        amount: "$93.45",
+        pfp: "https://pbs.twimg.com/profile_images/1130887322189336576/jtswkWQc_400x400.png",
+    },
+    {
         name: "atunasashimi",
         amount: "$86",
         socials: {
@@ -32,32 +67,6 @@ const donations = [
         },
         amount: "$74.80",
         pfp: "/brett.png",
-    },
-    {
-        name: "creepio",
-        socials: {
-            twitch: "https://twitch.tv/threecreepio",
-            twitter: "https://twitter.com/threecreepio",
-        },
-        amount: "$50",
-        pfp: "https://pbs.twimg.com/profile_images/1130887322189336576/jtswkWQc_400x400.png",
-    },
-    {
-        name: "mono_nz",
-        socials: {
-            twitter: "https://twitter.com/mononzz",
-            twitch: "https://www.twitch.tv/mono_nz",
-        },
-        amount: "$50",
-        pfp: "https://pbs.twimg.com/profile_images/1596421733988253696/gnw6fMks_400x400.jpg",
-    },
-    {
-        name: "Greg Gilbert",
-        amount: "$50",
-        socials: {
-            twitter: "https://twitter.com/greggilbertme",
-        },
-        pfp: "https://pbs.twimg.com/profile_images/1688833453943308288/EJaiyrjj_400x400.jpg",
     },
     {
         name: "ManniMoki",
