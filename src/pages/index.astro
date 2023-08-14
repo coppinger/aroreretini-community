@@ -411,7 +411,9 @@ const menuItems = [
                             {
                                 donations.map(
                                     ({ name, amount, socials, pfp }) => {
-                                        let nzd = 1 * 1.6;
+                                        let nzd = `$${
+                                            parseInt(amount.substring(1)) * 1.6
+                                        }`;
                                         return (
                                             <li class="flex justify-between items-center">
                                                 <div class="flex gap-4 items-center">

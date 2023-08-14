@@ -147,7 +147,7 @@ const donations = [
         socials: {
             twitter: "https://twitter.com/PSaezT/",
         },
-        amount: "4 gift subs",
+        amount: "$" + (4 * 5).toString(),
         pfp: "https://pbs.twimg.com/profile_images/1458345842180382721/RqeZKcU8_400x400.jpg",
     },
     {
