@@ -6,7 +6,7 @@ const donations = [
             twitch: "https://twitch.tv/whitep4nth3r",
             twitter: "https://twitter.com/whitep4nth3r",
         },
-        pfp: "https://pbs.twimg.com/profile_images/1676137555555647488/GnqLuxNX_400x400.jpg",
+        pfp: "https://pbs.twimg.com/profile_images/1710281909136183296/99fKtMKI_400x400.jpg",
     },
     {
         name: "AkiraLaine",
@@ -75,7 +75,7 @@ const donations = [
             twitter: "https://twitter.com/ManniMoki",
         },
         amount: "$50",
-        pfp: "https://pbs.twimg.com/profile_images/1411181356919443458/yxJ0RVry_400x400.jpg",
+        pfp: "https://pbs.twimg.com/profile_images/1702433041728126976/G79XLn0H_400x400.jpg",
     },
     {
         name: "NobreHD",
